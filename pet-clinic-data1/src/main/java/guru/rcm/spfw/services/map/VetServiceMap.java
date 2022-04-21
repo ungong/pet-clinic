@@ -2,14 +2,17 @@ package guru.rcm.spfw.services.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import guru.rcm.spfw.model.Vet;
 import guru.rcm.spfw.services.CrudService;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long>{
 
 	@Override
 	public Vet save(Vet object) {
-		return super.save(object.getId(), object);
+		return super.save(object);
 	}
 
 	@Override

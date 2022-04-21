@@ -2,14 +2,17 @@ package guru.rcm.spfw.services.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import guru.rcm.spfw.model.Owner;
 import guru.rcm.spfw.services.CrudService;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long>{
 
 	@Override
 	public Owner save(Owner object) {
-		return super.save(object.getId(),object);
+		return super.save(object);
 	}
 
 	@Override
