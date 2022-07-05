@@ -2,13 +2,15 @@ package guru.rcm.spfw.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import guru.rcm.spfw.model.PetType;
 import guru.rcm.spfw.services.PetTypeService;
 
 @Service
-public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService{
+@Profile({"default", "map"})
+public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService{
 
 	@Override
 	public Set<PetType> findAll() {
